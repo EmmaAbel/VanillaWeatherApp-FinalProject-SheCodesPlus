@@ -15,31 +15,40 @@
   </head>
   <body>
     <div class="container">
-      <div class="weatherApp">
-        <h1>Viborg</h1>
-        <ul>
-          <li>Today 15:45</li>
-          <li>Clear</li>
-        </ul>
-        <div class="row">
-          <div class="col-6">
+      <div class="weatherApp-wrapper">
+        <div class="weatherApp">
+          <div class="overview">
+            <h1>Viborg</h1>
             <ul>
-              <li>
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-                  alt="Clear"
-                />
-                11 °C | °F
-              </li>
-              <li>Feels like 11 °C | °F</li>
+              <li>Today 15:45</li>
+              <li>Clear</li>
             </ul>
           </div>
-          <div class="col-6">
-            <ul>
-              <li>Precipitation: 0%</li>
-              <li>Humidity: 39%</li>
-              <li>Wind: 3 m/s</li>
-            </ul>
+          <div class="row">
+            <div class="col-6">
+              <ul>
+                <li>
+                  <div class="clearfix weather-temperature">
+                    <div class="float-start">
+                      <strong>11</strong><span class="units">°C | °F</span>
+                    </div>
+                    <img
+                      src="https://www.yr.no/assets/images/svg/01d.svg"
+                      alt="Clear"
+                      class="float-start"
+                    />
+                  </div>
+                </li>
+                <li class="feels-like">Feels like 11°</li>
+              </ul>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>Precipitation: 0%</li>
+                <li>Humidity: 39%</li>
+                <li>Wind: 3 m/s</li>
+              </ul>
+            </div>
           </div>
         </div>
         <small>

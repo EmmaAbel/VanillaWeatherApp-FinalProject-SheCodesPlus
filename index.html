@@ -10,6 +10,7 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/styles.css" />
     <title>Vanilla Weather App</title>
   </head>
@@ -18,10 +19,10 @@
       <div class="weatherApp-wrapper">
         <div class="weatherApp">
           <div class="overview">
-            <h1>Viborg</h1>
+            <h1 id="city">Viborg</h1>
             <ul>
-              <li>Today 15:45</li>
-              <li>Clear</li>
+              <li>Today <span id="time"></span></li>
+              <li id="description">Clear</li>
             </ul>
           </div>
           <div class="row">
@@ -30,7 +31,8 @@
                 <li>
                   <div class="clearfix weather-temperature">
                     <div class="float-start">
-                      <strong>11</strong><span class="units">°C | °F</span>
+                      <strong id="temperature"></strong
+                      ><span class="units">°C | °F</span>
                     </div>
                     <img
                       src="https://www.yr.no/assets/images/svg/01d.svg"
@@ -39,14 +41,16 @@
                     />
                   </div>
                 </li>
-                <li class="feels-like">Feels like 11°</li>
+                <li class="feels-like">
+                  Feels like <span id="feelsLike"></span>°
+                </li>
               </ul>
             </div>
             <div class="col-6">
               <ul>
                 <li>Precipitation: 0%</li>
-                <li>Humidity: 39%</li>
-                <li>Wind: 3 m/s</li>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span> m/s</li>
               </ul>
             </div>
           </div>

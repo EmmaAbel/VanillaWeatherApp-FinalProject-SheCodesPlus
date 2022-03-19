@@ -19,6 +19,7 @@ li {
   font-weight: 100;
   line-height: 19px;
   color: #70757a;
+  text-transform: capitalize;
 }
 .overview {
   margin-bottom: 15px;

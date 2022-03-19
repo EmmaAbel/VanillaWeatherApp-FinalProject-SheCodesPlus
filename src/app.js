@@ -1,3 +1,15 @@
+let now = new Date();
+let hour = now.getHours();
+if (hour < 10) {
+  hour = `0${hour}`;
+}
+let minutes = now.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
+let timeElement = document.querySelector("#time");
+timeElement.innerHTML = `${hour}:${minutes}`;
+
 function displayTemperature(response) {
   console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");

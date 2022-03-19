@@ -19,6 +19,8 @@ li {
   font-weight: 100;
   line-height: 19px;
   color: #70757a;
+}
+li::first-letter {
   text-transform: capitalize;
 }
 .overview {

@@ -11,6 +11,8 @@ let timeElement = document.querySelector("#time");
 timeElement.innerHTML = `${hour}:${minutes}`;
 
 function displayTemperature(response) {
+  let cityElement = document.querySelector("#city");
+  cityElement.innerHTML = response.data.name;
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   let descriptionElement = document.querySelector("#description");
@@ -28,7 +30,20 @@ function displayTemperature(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
-let apiKey = "6cd400507dc4152e1e63d463507ab0e3";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Viborg&appid=${apiKey}&units=metric`;
-console.log(apiUrl);
-axios.get(apiUrl).then(displayTemperature);
+
+function search(city) {
+  let apiKey = "6cd400507dc4152e1e63d463507ab0e3";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+
+search("Viborg");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);

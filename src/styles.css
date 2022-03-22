@@ -53,8 +53,6 @@ li::first-letter {
 }
 .feels-like {
   font-size: 12px;
-  position: relative;
-  left: 13px;
 }
 
 .weather-temperature .active {

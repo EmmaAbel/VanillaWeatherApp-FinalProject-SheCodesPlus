@@ -82,19 +82,6 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
-function formatTime(timestamp) {
-  let date = new Date(timestamp);
-  let hours = date.getUTCHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = now.getUTCMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-
-  return `${hours}:${minutes}`;
-}
 function currentMaxMinTemp(response) {
   let minimumTemp = document.querySelector(".min-temperature");
   minimumTemp.innerHTML = Math.round(response.data.daily[0].temp.min);

@@ -27,8 +27,8 @@
   <body>
     <div class="container">
       <div class="weatherApp-wrapper">
-        <div class="weatherApp">
-          <div id="time" class="grey"></div>
+        <div class="weatherApp" id="weatherApp">
+          <div id="time"></div>
           <form id="search-form" class="mb-3">
             <div class="row">
               <div class="col-1 text-right currentCityIcon">
@@ -49,7 +49,7 @@
                 <input
                   type="submit"
                   value="Search"
-                  class="btn btn-primary rounded-pill w-100 search-button"
+                  class="btn btn-light rounded-pill w-100 search-button"
                 />
               </div>
             </div>
@@ -57,7 +57,7 @@
           <div class="overview">
             <h1 id="city"></h1>
             <ul>
-              <li class="grey" id="description">Clear</li>
+              <li id="description">Clear</li>
             </ul>
           </div>
           <div class="row">
@@ -72,10 +72,10 @@
                     </div>
                   </div>
                 </li>
-                <li class="feels-like grey">
+                <li class="feels-like">
                   Feels like <span id="feelsLike"></span> °C
                 </li>
-                <li class="grey">
+                <li>
                   <i class="fa-solid fa-arrow-up"></i>
                   <span class="max-temperature"></span>°
                   <i class="fa-solid fa-arrow-down"></i>
@@ -85,8 +85,8 @@
             </div>
             <div class="col-6">
               <ul>
-                <li class="grey">Humidity: <span id="humidity"></span>%</li>
-                <li class="grey">Wind: <span id="wind"></span> m/s</li>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span> m/s</li>
               </ul>
             </div>
           </div>

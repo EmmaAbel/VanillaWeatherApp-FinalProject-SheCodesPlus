@@ -63,10 +63,10 @@ function displayForecast(response) {
       <div class="weather-forecast-temperatures">
        <span class="weather-forecast-max-temperature">${Math.round(
          forecastDay.temp.max
-       )}</span
-       >°/<span class="weather-forecast-min-temperature">${Math.round(
+       )}°</span
+       >/<span class="weather-forecast-min-temperature grey">${Math.round(
          forecastDay.temp.min
-       )}</span>°
+       )}°</span>
       </div>
    </div>
   `;
@@ -117,8 +117,11 @@ function displayTemperature(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.innerHTML = getIcon(response.data.weather[0].icon);
 
+  nightDay(response.data.weather[0].icon);
+
   getForecast(response.data.coord);
 }
+
 function getIcon(icon) {
   let newIconElement = "";
   if (icon === "02d") {
@@ -149,6 +152,24 @@ function getIcon(icon) {
     newIconElement = `<i class="fa-solid fa-smog"></i>`;
   }
   return newIconElement;
+}
+
+function nightDay(icon) {
+  let nightTheme = document.body;
+  let theme = "";
+  if (
+    icon === "01n" ||
+    icon === "02n" ||
+    icon === "03n" ||
+    icon === "04n" ||
+    icon === "09n" ||
+    icon === "10n" ||
+    icon === "11n" ||
+    icon === "13n" ||
+    icon === "50n"
+  ) {
+    nightTheme.classList.toggle("dark-mode");
+  }
 }
 
 function search(city) {

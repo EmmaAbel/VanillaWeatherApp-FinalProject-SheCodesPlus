@@ -95,11 +95,18 @@ function formatTime(timestamp) {
 
   return `${hours}:${minutes}`;
 }
+function currentMaxMinTemp(response) {
+  let minimumTemp = document.querySelector(".min-temperature");
+  minimumTemp.innerHTML = Math.round(response.data.daily[0].temp.min);
+  let maximumTemp = document.querySelector(".max-temperature");
+  maximumTemp.innerHTML = Math.round(response.data.daily[0].temp.max);
+}
 
 function getForecast(coordinates) {
   let apiKey = "6cd400507dc4152e1e63d463507ab0e3";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
+  axios.get(apiUrl).then(currentMaxMinTemp);
 }
 
 function displayTemperature(response) {

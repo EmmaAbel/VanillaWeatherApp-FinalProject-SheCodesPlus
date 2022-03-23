@@ -51,7 +51,6 @@ function displayForecast(response) {
 
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-
   forecast.forEach(function (forecastDay, index) {
     if (index > 0 && index < 6) {
       forecastHTML =
@@ -59,13 +58,8 @@ function displayForecast(response) {
         `
    <div class="col-2">
       <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
-       <img
-        src="http://openweathermap.org/img/wn/${
-          forecastDay.weather[0].icon
-        }@2x.png"
-       alt=""
-       width="42"
-       />
+       <span> ${getIcon(forecastDay.weather[0].icon)}
+       <span/>
       <div class="weather-forecast-temperatures">
        <span class="weather-forecast-max-temperature">${Math.round(
          forecastDay.temp.max
@@ -121,13 +115,40 @@ function displayTemperature(response) {
   timeElement.innerHTML = formatDate(response.data.dt * 1000);
 
   let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
+  iconElement.innerHTML = getIcon(response.data.weather[0].icon);
 
   getForecast(response.data.coord);
+}
+function getIcon(icon) {
+  let newIconElement = "";
+  if (icon === "02d") {
+    newIconElement = `<i class="fa-solid fa-cloud-sun"></i>`;
+  } else if (icon === "02n") {
+    newIconElement = `<i class="fa-solid fa-cloud-moon"></i>`;
+  } else if (icon === "03d") {
+    newIconElement = `<i class="fa-solid fa-clouds-sun"></i>`;
+  } else if (icon === "03n") {
+    newIconElement = `<i class="fa-solid fa-clouds-moon"></i>`;
+  } else if (icon === "04d" || icon === "04n") {
+    newIconElement = `<i class="fa-solid fa-cloud"></i>`;
+  } else if (icon === "01d") {
+    newIconElement = `<i class="fa-solid fa-sun"></i>`;
+  } else if (icon === "01n") {
+    newIconElement = `<i class="fa-solid fa-moon"></i>`;
+  } else if (icon === "10d") {
+    newIconElement = `<i class="fa-solid fa-cloud-sun-rain"></i>`;
+  } else if (icon === "10n") {
+    newIconElement = `<i class="fa-solid fa-cloud-moon-rain"></i>`;
+  } else if (icon === "09d" || icon === "09n") {
+    newIconElement = `<i class="fa-solid fa-cloud-showers-heavy"></i>`;
+  } else if (icon === "11d" || icon === "11n") {
+    newIconElement = `<i class="fas fa-bolt"></i>`;
+  } else if (icon === "13d" || icon === "13n") {
+    newIconElement = `<i class="fa-solid fa-snowflake"></i>`;
+  } else if (icon === "50d" || icon === "50n") {
+    newIconElement = `<i class="fa-solid fa-smog"></i>`;
+  }
+  return newIconElement;
 }
 
 function search(city) {

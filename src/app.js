@@ -1,4 +1,31 @@
 let now = new Date();
+let days = [
+  "Sunday",
+  "Monday",
+  "Tueday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+let day = days[now.getDay()];
+let months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "Octobter",
+  "November",
+  "December",
+];
+let month = months[now.getMonth()];
+let year = now.getFullYear();
+let date = now.getDate();
 let hour = now.getHours();
 if (hour < 10) {
   hour = `0${hour}`;
@@ -7,8 +34,9 @@ let minutes = now.getMinutes();
 if (minutes < 10) {
   minutes = `0${minutes}`;
 }
+let currentDate = `Last updated ${day}, ${month} ${date} ${year} at ${hour}:${minutes}`;
 let timeElement = document.querySelector("#time");
-timeElement.innerHTML = `${hour}:${minutes}`;
+timeElement.innerHTML = currentDate;
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);

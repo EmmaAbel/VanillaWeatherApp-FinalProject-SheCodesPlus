@@ -10,6 +10,10 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <script
+      src="https://kit.fontawesome.com/3b7ce627a5.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/styles.css" />
     <title>Vanilla Weather App</title>
@@ -18,10 +22,13 @@
     <div class="container">
       <div class="weatherApp-wrapper">
         <div class="weatherApp">
+          <div id="time"></div>
           <form id="search-form" class="mb-3">
             <div class="row">
               <div class="col-1">
-                <button id="currentCity">📍</button>
+                <button type="button" id="currentCity">
+                  <i class="fa-solid fa-location-dot"></i>
+                </button>
               </div>
               <div class="col-8">
                 <input
@@ -44,7 +51,6 @@
           <div class="overview">
             <h1 id="city"></h1>
             <ul>
-              <li>Today <span id="time"></span></li>
               <li id="description">Clear</li>
             </ul>
           </div>

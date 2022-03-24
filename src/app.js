@@ -207,42 +207,42 @@ currentCity.addEventListener("click", currentLocation);
 search("Viborg");
 
 function backgroundChange(icon) {
-  var background = document.getElementById("weatherApp");
+  let background = document.querySelector(".weatherApp");
   if (icon === "01d") {
-    background.style.backgroundImage = `url("../images/01d.jpg")`;
+    background.style.backgroundImage = `url("./images/01d.jpg")`;
   } else if (icon === "01n") {
-    background.style.backgroundImage = `url("../images/01n.jpg")`;
+    background.style.backgroundImage = `url("./images/01n.jpg")`;
   } else if (icon === "02d") {
-    background.style.backgroundImage = `url("../images/02d.jpg")`;
+    background.style.backgroundImage = `url("./images/02d.jpg")`;
   } else if (icon === "02n") {
-    background.style.backgroundImage = `url("../images/02n.jpg")`;
+    background.style.backgroundImage = `url("./images/02n.jpg")`;
   } else if (icon === "03d") {
-    background.style.backgroundImage = `url("../images/03d.jpg")`;
+    background.style.backgroundImage = `url("./images/03d.jpg")`;
   } else if (icon === "03n") {
-    background.style.backgroundImage = `url("../images/03n.jpg")`;
+    background.style.backgroundImage = `url("./images/03n.jpg")`;
   } else if (icon === "04d") {
-    background.style.backgroundImage = `url("../images/04d.jpg")`;
+    background.style.backgroundImage = `url("./images/04d.jpg")`;
   } else if (icon === "04n") {
-    background.style.backgroundImage = `url("../images/04n.jpg")`;
+    background.style.backgroundImage = `url("./images/04n.jpg")`;
   } else if (icon === "09d") {
-    background.style.backgroundImage = `url("../images/09d.jpg")`;
+    background.style.backgroundImage = `url("./images/09d.jpg")`;
   } else if (icon === "09n") {
-    background.style.backgroundImage = `url("../images/09n.jpg")`;
+    background.style.backgroundImage = `url("./images/09n.jpg")`;
   } else if (icon === "10d") {
-    background.style.backgroundImage = `url("../images/10d.jpg")`;
+    background.style.backgroundImage = `url("./images/10d.jpg")`;
   } else if (icon === "10n") {
-    background.style.backgroundImage = `url("../images/10n.jpg")`;
+    background.style.backgroundImage = `url("./images/10n.jpg")`;
   } else if (icon === "11d") {
-    background.style.backgroundImage = `url("../images/11d.jpg")`;
+    background.style.backgroundImage = `url("./images/11d.jpg")`;
   } else if (icon === "11n") {
-    background.style.backgroundImage = `url("../images/11n.jpg")`;
+    background.style.backgroundImage = `url("./images/11n.jpg")`;
   } else if (icon === "13d") {
     background.style.backgroundImage = `url("../images/13d.jpg")`;
   } else if (icon === "13n") {
-    background.style.backgroundImage = `url("../images/13n.jpg")`;
+    background.style.backgroundImage = `url("./images/13n.jpg")`;
   } else if (icon === "50d") {
-    background.style.backgroundImage = `url("../images/50d.jpg")`;
+    background.style.backgroundImage = `url("./images/50d.jpg")`;
   } else if (icon === "50n") {
-    background.style.backgroundImage = `url("../images/50n.jpg")`;
+    background.style.backgroundImage = `url("./images/50n.jpg")`;
   }
 }

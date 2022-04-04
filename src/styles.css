@@ -71,6 +71,19 @@ li::first-letter {
   font-style: italic;
   font-size: 10px;
 }
+.instagram {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 12px;
+}
 #time {
   text-align: right;
   font-size: 12px;

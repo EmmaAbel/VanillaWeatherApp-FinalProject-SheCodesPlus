@@ -117,6 +117,8 @@ function displayTemperature(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.innerHTML = getIcon(response.data.weather[0].icon);
 
+  console.log(response.data.weather[0].icon);
+
   nightDay(response.data.weather[0].icon);
 
   getForecast(response.data.coord);
@@ -158,7 +160,7 @@ function getIcon(icon) {
 
 function nightDay(icon) {
   let nightTheme = document.body;
-  let theme = "";
+  let locationButton = document.querySelector("#currentCity");
   if (
     icon === "01n" ||
     icon === "02n" ||
@@ -170,7 +172,11 @@ function nightDay(icon) {
     icon === "13n" ||
     icon === "50n"
   ) {
-    nightTheme.classList.toggle("dark-mode");
+    nightTheme.classList.replace("light-mode", "dark-mode");
+    locationButton.style.color = "white";
+  } else {
+    nightTheme.classList.replace("dark-mode", "light-mode");
+    locationButton.style.color = "black";
   }
 }
 

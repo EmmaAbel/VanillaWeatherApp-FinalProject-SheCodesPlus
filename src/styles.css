@@ -1,5 +1,6 @@
 body {
   font-family: "Catamaran", sans-serif;
+  font-weight: 400;
 }
 h1 {
   font-size: 34px;
@@ -16,7 +17,6 @@ li {
   margin: 0;
   padding: 0;
   font-size: 15px;
-  font-weight: 100;
   line-height: 19px;
 }
 li::first-letter {
@@ -44,7 +44,7 @@ li::first-letter {
 .weather-temperature strong {
   font-size: 64px;
   line-height: 1;
-  font-weight: 400;
+  font-weight: 600;
 }
 .weather-temperature .units {
   position: relative;
@@ -73,6 +73,14 @@ li::first-letter {
 .weather-forecast-temperatures {
   font-size: 13px;
 }
+.dark-mode {
+  background-color: #1b1b1b;
+  color: white;
+}
+.light-mode {
+  background-color: white;
+  color: black;
+}
 #time {
   text-align: right;
   font-size: 12px;
@@ -85,8 +93,4 @@ li::first-letter {
 }
 #icon {
   font-size: 50px;
-}
-.dark-mode {
-  background-color: #1b1b1b;
-  color: white;
 }

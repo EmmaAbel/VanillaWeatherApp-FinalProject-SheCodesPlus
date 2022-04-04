@@ -117,8 +117,6 @@ function displayTemperature(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.innerHTML = getIcon(response.data.weather[0].icon);
 
-  console.log(response.data.weather[0].icon);
-
   nightDay(response.data.weather[0].icon);
 
   getForecast(response.data.coord);
@@ -176,38 +174,6 @@ function nightDay(icon) {
   }
 }
 
-function search(city) {
-  let apiKey = "6cd400507dc4152e1e63d463507ab0e3";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayTemperature);
-}
-
-function handleSubmit(event) {
-  event.preventDefault();
-  let cityInputElement = document.querySelector("#city-input");
-  search(cityInputElement.value);
-}
-
-function handlePosition(position) {
-  let longitude = position.coords.longitude;
-  let latitude = position.coords.latitude;
-  let apiKey = "6cd400507dc4152e1e63d463507ab0e3";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayTemperature);
-}
-
-function currentLocation(position) {
-  navigator.geolocation.getCurrentPosition(handlePosition);
-}
-
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit);
-
-let currentCity = document.querySelector("#currentCity");
-currentCity.addEventListener("click", currentLocation);
-
-search("Viborg");
-
 function backgroundChange(icon) {
   let background = document.querySelector(".weatherApp");
   if (icon === "01d") {
@@ -248,3 +214,35 @@ function backgroundChange(icon) {
     background.style.backgroundImage = `url("./images/50n.jpg")`;
   }
 }
+
+function search(city) {
+  let apiKey = "6cd400507dc4152e1e63d463507ab0e3";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+
+function handlePosition(position) {
+  let longitude = position.coords.longitude;
+  let latitude = position.coords.latitude;
+  let apiKey = "6cd400507dc4152e1e63d463507ab0e3";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function currentLocation(position) {
+  navigator.geolocation.getCurrentPosition(handlePosition);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
+let currentCity = document.querySelector("#currentCity");
+currentCity.addEventListener("click", currentLocation);
+
+search("Viborg");

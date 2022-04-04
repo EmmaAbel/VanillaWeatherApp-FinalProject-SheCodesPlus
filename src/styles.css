@@ -36,11 +36,6 @@ li::first-letter {
   background-image: url("../images/50n.jpg");
   background-size: cover;
 }
-.weather-temperature img {
-  margin-right: 5px;
-  height: 64px;
-  width: 64px;
-}
 .weather-temperature strong {
   font-size: 64px;
   line-height: 1;
@@ -53,15 +48,6 @@ li::first-letter {
 }
 .feels-like {
   font-size: 14px;
-}
-
-.weather-temperature .active {
-  cursor: default;
-  text-decoration: none;
-}
-
-.weather-temperature .active:hover {
-  text-decoration: none;
 }
 .weather-forecast {
   margin-top: 20px;
@@ -81,6 +67,10 @@ li::first-letter {
   background-color: white;
   color: black;
 }
+.myself {
+  font-style: italic;
+  font-size: 10px;
+}
 #time {
   text-align: right;
   font-size: 12px;
@@ -90,6 +80,7 @@ li::first-letter {
   font-size: 26px;
   position: relative;
   top: -6px;
+  left: -9px;
 }
 #icon {
   font-size: 50px;

@@ -128,14 +128,10 @@ function displayTemperature(response) {
 
 function getIcon(icon) {
   let newIconElement = "";
-  if (icon === "02d") {
+  if (icon === "02d" || icon === "03d") {
     newIconElement = `<i class="fa-solid fa-cloud-sun"></i>`;
-  } else if (icon === "02n") {
+  } else if (icon === "02n" || icon === "03n") {
     newIconElement = `<i class="fa-solid fa-cloud-moon"></i>`;
-  } else if (icon === "03d") {
-    newIconElement = `<i class="fa-solid fa-clouds-sun"></i>`;
-  } else if (icon === "03n") {
-    newIconElement = `<i class="fa-solid fa-clouds-moon"></i>`;
   } else if (icon === "04d" || icon === "04n") {
     newIconElement = `<i class="fa-solid fa-cloud"></i>`;
   } else if (icon === "01d") {
